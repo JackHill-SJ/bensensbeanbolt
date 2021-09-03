@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/Library/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
+Bensen's Bean Dash/Library/
+Bensen's Bean Dash/[Tt]emp/
+Bensen's Bean Dash/[Oo]bj/
+Bensen's Bean Dash/[Bb]uild/
+Bensen's Bean Dash/[Bb]uilds/
+Bensen's Bean Dash/[Ll]ogs/
+Bensen's Bean Dash/[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -58,3 +58,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Bensen's Bean Dash/Library/ArtifactDB
+Bensen's Bean Dash/Library/ArtifactDB-lock
+Bensen's Bean Dash/Packages/manifest.json
+Bensen's Bean Dash/Packages/packages-lock.json
