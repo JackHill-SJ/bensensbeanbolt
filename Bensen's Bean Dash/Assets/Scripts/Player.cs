@@ -82,6 +82,7 @@ public class Player : MonoBehaviour
         {
             DOTween.Kill(c.height);
             DOTween.Kill(c.center.y);
+            CancelInvoke(nameof(SlideUp));
             c.height = 2;
             sliding = false;
             a?.SetBool(ANIM_BOOL, false);
