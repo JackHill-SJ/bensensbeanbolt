@@ -13,10 +13,19 @@ public class Score : MonoBehaviour
 
     string highStartText;
     string scoreStartText;
-    [HideInInspector] public int score = 0;
+    [HideInInspector] public float score = 0;
 
-    private void Awake() => Instance = Instance ?? this;
-    private void OnDestroy() => Instance = Instance == this ? null : Instance;
+    private void Awake()
+    {
+        Instance = Instance ?? this;
+        GameManager.OnGameFinished -= OnLose;
+        GameManager.OnGameFinished += OnLose;
+    }
+    private void OnDestroy()
+    {
+        Instance = Instance == this ? null : Instance;
+        GameManager.OnGameFinished -= OnLose;
+    }
     private void Start()
     {
         highStartText = HighText.text;
@@ -25,9 +34,13 @@ public class Score : MonoBehaviour
         HighText.text = $"{highStartText} {PlayerPrefs.GetInt(SCORE, 0)}";
         AddScore(0);
     }
-    public void AddScore(int x)
+    public void AddScore(float x)
     {
         score += x;
-        ScoreText.text = $"{scoreStartText} {score}";
+        ScoreText.text = $"{scoreStartText} {Mathf.RoundToInt(score)}";
+    }
+    void OnLose()
+    {
+        PlayerPrefs.SetInt(SCORE, Mathf.RoundToInt(score));
     }
 }

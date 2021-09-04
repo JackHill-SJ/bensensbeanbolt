@@ -30,7 +30,7 @@ public class BuildingSpawner : MonoBehaviour
     {
         MoveChildren(leftChildren);
         MoveChildren(rightChildren);
-        Speed *= Time.deltaTime * GameManager.Instance.SpeedIncreasePercentagePerSecond;
+        Speed += Speed * Time.deltaTime * GameManager.Instance.SpeedIncreasePercentagePerSecond;
     }
     void MoveChildren(List<GameObject> list)
     {

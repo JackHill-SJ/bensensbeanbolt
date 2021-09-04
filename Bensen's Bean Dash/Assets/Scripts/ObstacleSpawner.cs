@@ -36,7 +36,8 @@ public class ObstacleSpawner : MonoBehaviour
             CreateTile(position + (tileLength * tileCount), TileType.Random);
         }
 
-        Speed *= Time.deltaTime * GameManager.Instance.SpeedIncreasePercentagePerSecond;
+        Speed += Speed * Time.deltaTime * GameManager.Instance.SpeedIncreasePercentagePerSecond;
+        Score.Instance.AddScore(Time.deltaTime * Speed);
     }
     void CreateTile(float position, TileType type)
     {
