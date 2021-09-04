@@ -26,7 +26,7 @@ public class ObstacleSpawner : MonoBehaviour
     }
     private void Update()
     {
-        foreach (GameObject gO in children) gO.transform.position += Vector3.back * Time.fixedDeltaTime * Speed;
+        foreach (GameObject gO in children) gO.transform.position += Vector3.back * Time.deltaTime * Speed;
 
         if (children[0].transform.position.z < -(tileLength * 1.5f))
         {

@@ -4,15 +4,50 @@ using UnityEngine;
 
 public class BuildingSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int Speed;
+    public GameObject[] Tiles = new GameObject[0];
+    List<GameObject> leftChildren = new List<GameObject>();
+    List<GameObject> rightChildren = new List<GameObject>();
+    public int tileLength = 10;
+    public int tileCount = 10;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        int position = 0;
+        for (int i = tileCount; i > 0; i--)
+        {
+            position += tileLength;
+            CreateTile(position, leftChildren);
+            CreateTile(position, rightChildren);
+        }
+    }
+    private void OnDestroy()
+    {
+        leftChildren = null;
+        rightChildren = null;
+    }
+    private void Update()
+    {
+        MoveChildren(leftChildren);
+        MoveChildren(rightChildren);
+    }
+    void MoveChildren(List<GameObject> list)
+    {
+        foreach (GameObject gO in list) gO.transform.position += Vector3.back * Time.deltaTime * Speed;
+
+        if (list[0].transform.position.z < -(tileLength * 1.5f))
+        {
+            float position = list[0].transform.position.z;
+            Destroy(list[0]);
+            list.RemoveAt(0);
+            CreateTile(position + (tileLength * tileCount), list);
+        }
+    }
+    void CreateTile(float position, List<GameObject> list)
+    {
+        GameObject temp = new GameObject();
+        temp.transform.parent = transform;
+        temp.transform.position = Vector3.forward * position;
+        list.Add(temp);
     }
 }
