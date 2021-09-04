@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
     const int OBSTACLE_LAYER = 7;
     const int LANE_COUNT = 3;
     public float JumpForce;
-    public float Speed;
 
     Rigidbody rB;
     CapsuleCollider c;
