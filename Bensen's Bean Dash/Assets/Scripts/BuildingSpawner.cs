@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BuildingSpawner : MonoBehaviour
 {
+    public enum Side { Left, Right }
     public float Speed;
     public GameObject[] Tiles = new GameObject[0];
     List<GameObject> leftChildren = new List<GameObject>();
@@ -17,8 +18,8 @@ public class BuildingSpawner : MonoBehaviour
         for (int i = tileCount; i > 0; i--)
         {
             position += tileLength;
-            CreateTile(position, leftChildren);
-            CreateTile(position, rightChildren);
+            CreateTile(position, leftChildren, Side.Left);
+            CreateTile(position, rightChildren, Side.Right);
         }
     }
     private void OnDestroy()
@@ -28,11 +29,11 @@ public class BuildingSpawner : MonoBehaviour
     }
     private void Update()
     {
-        MoveChildren(leftChildren);
-        MoveChildren(rightChildren);
+        MoveChildren(leftChildren, Side.Left);
+        MoveChildren(rightChildren, Side.Right);
         Speed += Speed * Time.deltaTime * GameManager.Instance.SpeedIncreasePercentagePerSecond;
     }
-    void MoveChildren(List<GameObject> list)
+    void MoveChildren(List<GameObject> list, Side side)
     {
         foreach (GameObject gO in list) gO.transform.position += Vector3.back * Time.deltaTime * Speed;
 
@@ -41,14 +42,15 @@ public class BuildingSpawner : MonoBehaviour
             float position = list[0].transform.position.z;
             Destroy(list[0]);
             list.RemoveAt(0);
-            CreateTile(position + (tileLength * tileCount), list);
+            CreateTile(position + (tileLength * tileCount), list, side);
         }
     }
-    void CreateTile(float position, List<GameObject> list)
+    void CreateTile(float position, List<GameObject> list, Side side)
     {
         GameObject temp = new GameObject();
         temp.transform.parent = transform;
         temp.transform.position = Vector3.forward * position;
+        temp.transform.position = (side == Side.Left ? Vector3.left : Vector3.right) * 15;
         list.Add(temp);
     }
 }
