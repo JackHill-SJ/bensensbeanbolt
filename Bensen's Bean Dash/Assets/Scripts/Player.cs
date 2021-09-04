@@ -14,10 +14,12 @@ public class Player : MonoBehaviour
     const int GROUND_LAYER = 6;
     const int OBSTACLE_LAYER = 7;
     const int LANE_COUNT = 3;
+    const string ANIM_BOOL = "Ducking";
     public float JumpForce;
 
     Rigidbody rB;
     CapsuleCollider c;
+    Animator a;
     int targetLane;
     bool onGround;
     bool sliding;
@@ -28,6 +30,7 @@ public class Player : MonoBehaviour
     {
         rB = GetComponent<Rigidbody>();
         c = GetComponent<CapsuleCollider>();
+        a = transform.GetChild(0).GetComponent<Animator>();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -37,7 +40,7 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.layer == OBSTACLE_LAYER)
         {
-            
+            GameManager.Instance.RunEnd();
         }
     }
     private void OnCollisionExit(Collision collision)
@@ -57,21 +60,15 @@ public class Player : MonoBehaviour
     }
     void LaneSwap()
     {
-        if (Input.GetKeyDown(LEFT))
+        if (Input.GetKeyDown(LEFT) && targetLane > -Mathf.RoundToInt((LANE_COUNT - 1) * .5f))
         {
-            if (targetLane > -Mathf.RoundToInt((LANE_COUNT - 1) * .5f))
-            {
-                targetLane--;
-                Swap();
-            }
+            targetLane--;
+            Swap();
         }
-        if (Input.GetKeyDown(RIGHT))
+        if (Input.GetKeyDown(RIGHT) && targetLane < Mathf.RoundToInt((LANE_COUNT - 1) * .5f))
         {
-            if (targetLane < Mathf.RoundToInt((LANE_COUNT - 1) * .5f))
-            {
-                targetLane++;
-                Swap();
-            }
+            targetLane++;
+            Swap();
         }
     }
     void Swap()
@@ -84,8 +81,10 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(UP) && onGround)
         {
             DOTween.Kill(c.height);
+            DOTween.Kill(c.center.y);
             c.height = 2;
             sliding = false;
+            a?.SetBool(ANIM_BOOL, false);
             rB.AddForce(Vector3.up * JumpForce);
         }
     }
@@ -98,9 +97,19 @@ public class Player : MonoBehaviour
             SlideDown();
         }
     }
-    void SlideDown() => DOTween.To(() => c.height, (float x) => c.height = x, 1, .1f).SetEase(Ease.Linear).OnComplete(SlideWait);
+    void SlideDown()
+    {
+        a?.SetBool(ANIM_BOOL, true);
+        DOTween.To(() => c.height, (float y) => c.height = y, 1, .1f).SetEase(Ease.Linear).OnComplete(SlideWait);
+        DOTween.To(() => c.center.y, (float y) => c.center = new Vector3(c.center.x, y, c.center.z), .5f, .1f).SetEase(Ease.Linear);
+    }
     void SlideWait() => Invoke(nameof(SlideUp), 1);
-    void SlideUp() => DOTween.To(() => c.height, (float x) => c.height = x, 2, .1f).SetEase(Ease.Linear).OnComplete(SlideDone);
+    void SlideUp()
+    {
+        a?.SetBool(ANIM_BOOL, false);
+        DOTween.To(() => c.height, (float y) => c.height = y, 2, .1f).SetEase(Ease.Linear).OnComplete(SlideDone);
+        DOTween.To(() => c.center.y, (float y) => c.center = new Vector3(c.center.x, y, c.center.z), 1, .1f).SetEase(Ease.Linear);
+    }
     void SlideDone() => sliding = false;
     void HandleGravity()
     {
