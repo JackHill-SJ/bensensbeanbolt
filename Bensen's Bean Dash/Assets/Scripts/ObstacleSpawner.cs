@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     public enum TileType { Empty, Random }
-    public int Speed;
+    public float Speed;
     public GameObject[] Tiles = new GameObject[0];
     List<GameObject> children = new List<GameObject>();
     public int tileLength = 10;
@@ -26,7 +26,7 @@ public class ObstacleSpawner : MonoBehaviour
     }
     private void Update()
     {
-        foreach (GameObject gO in children) gO.transform.position += Vector3.back * Time.fixedDeltaTime * Speed;
+        foreach (GameObject gO in children) gO.transform.position += Vector3.back * Time.deltaTime * Speed;
 
         if (children[0].transform.position.z < -(tileLength * 1.5f))
         {
@@ -35,6 +35,9 @@ public class ObstacleSpawner : MonoBehaviour
             children.RemoveAt(0);
             CreateTile(position + (tileLength * tileCount), TileType.Random);
         }
+
+        Speed += Speed * Time.deltaTime * GameManager.Instance.SpeedIncreasePercentagePerSecond;
+        Score.Instance.AddScore(Time.deltaTime * Speed);
     }
     void CreateTile(float position, TileType type)
     {
