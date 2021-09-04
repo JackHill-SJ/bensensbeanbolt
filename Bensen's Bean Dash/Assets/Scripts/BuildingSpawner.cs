@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingSpawner : MonoBehaviour
 {
-    public int Speed;
+    public float Speed;
     public GameObject[] Tiles = new GameObject[0];
     List<GameObject> leftChildren = new List<GameObject>();
     List<GameObject> rightChildren = new List<GameObject>();
@@ -30,6 +30,7 @@ public class BuildingSpawner : MonoBehaviour
     {
         MoveChildren(leftChildren);
         MoveChildren(rightChildren);
+        Speed *= Time.deltaTime * GameManager.Instance.SpeedIncreasePercentagePerSecond;
     }
     void MoveChildren(List<GameObject> list)
     {
