@@ -11,12 +11,12 @@ public class ObstacleSpawner : MonoBehaviour
     private void Start()
     {
         int position = tileLength * tileCount;
-        for (int i = 0; i < tileCount; i++)
+        for (int i = tileCount; i > 0; i--)
         {
+            position -= tileLength;
             GameObject temp = new GameObject();
             temp.transform.parent = transform;
             temp.transform.position = Vector3.forward * position;
-            position -= tileLength;
         }
     }
 }
