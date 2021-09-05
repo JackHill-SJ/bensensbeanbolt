@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &922248904369557636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4740120556410375639}
+  - component: {fileID: 8912602624704573320}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4740120556410375639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922248904369557636}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.11894609, y: 0.6506634, z: 0.030635526}
+  m_LocalScale: {x: 0.6666665, y: 0.6666667, z: 0.6666665}
+  m_Children: []
+  m_Father: {fileID: 4090491339961367284}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8912602624704573320
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922248904369557636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6591456, y: 0.92418003, z: 3.7159393}
+  m_Center: {x: 0.06356609, y: 0.9682088, z: 0.34258854}
 --- !u!1 &1006496068780888863
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,8 +136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4090491339961367284}
   - component: {fileID: 530410393225432627}
-  - component: {fileID: 3758320760108160306}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GenericCar1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,6 +157,7 @@ Transform:
   - {fileID: 915918068910678417}
   - {fileID: 7166446112114411310}
   - {fileID: 7119390819129511886}
+  - {fileID: 4740120556410375639}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -130,19 +174,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.7179093, y: 1.0844288, z: 1.7546235}
   m_Center: {x: -0.093959406, y: 0.56089616, z: 0.061573345}
---- !u!65 &3758320760108160306
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3715338434379063374}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.4492457, y: 0.528932, z: 1.5325737}
-  m_Center: {x: 0.08502793, y: 1.3259271, z: 0.013501405}
 --- !u!1 &3801744809216585595
 GameObject:
   m_ObjectHideFlags: 0

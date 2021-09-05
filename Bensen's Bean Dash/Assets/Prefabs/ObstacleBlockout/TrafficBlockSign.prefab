@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1950576988356639925}
   - component: {fileID: 1950576988356639924}
   - component: {fileID: 1950576988356639931}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TrafficBlockSign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 1950576988395413707}
   - component: {fileID: 1950576988395413706}
   - component: {fileID: 1950576988395413705}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 1950576988796232564}
   - component: {fileID: 1950576988796232571}
   - component: {fileID: 1950576988796232570}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 1950576989012167705}
   - component: {fileID: 1950576989012167704}
   - component: {fileID: 1950576989012167711}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
