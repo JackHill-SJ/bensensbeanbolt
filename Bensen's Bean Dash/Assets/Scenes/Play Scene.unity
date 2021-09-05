@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 1ab8bb3b1e2b46841aa2ab8788a9815d, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 39cc9dd4c78bfde4181519fc8eacb2cf, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -575,6 +575,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &770684588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 107744649786853642, guid: 25818d89e415e0b4a8ceb2e6cc05e90b, type: 3}
+  m_PrefabInstance: {fileID: 1374675416}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &770684591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770684588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b74ff930b641e14ab58cf7c00b9dc92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &882685795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1518795941717444921, guid: 25818d89e415e0b4a8ceb2e6cc05e90b, type: 3}
+  m_PrefabInstance: {fileID: 1374675416}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &882685799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882685795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c97f38392a5ee42abb8834e7653c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &983008951
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +656,50 @@ MonoBehaviour:
   Tiles: []
   tileLength: 20
   tileCount: 10
+--- !u!1 &1014374860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1014374862}
+  - component: {fileID: 1014374861}
+  m_Layer: 0
+  m_Name: Skybox Cool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1014374861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014374860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2631820b65e5c604d927b27c7d43475b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Skybox: {fileID: 2100000, guid: 39cc9dd4c78bfde4181519fc8eacb2cf, type: 2}
+--- !u!4 &1014374862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014374860}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1134803365
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +711,7 @@ GameObject:
   - component: {fileID: 1134803366}
   - component: {fileID: 1134803368}
   - component: {fileID: 1134803367}
+  - component: {fileID: 1134803369}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -701,6 +780,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134803365}
   m_CullTransparentMesh: 1
+--- !u!114 &1134803369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134803365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1d41645a71bce458856482561c6190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1146910840
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +803,7 @@ GameObject:
   - component: {fileID: 1146910841}
   - component: {fileID: 1146910843}
   - component: {fileID: 1146910842}
+  - component: {fileID: 1146910844}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -780,6 +872,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146910840}
   m_CullTransparentMesh: 1
+--- !u!114 &1146910844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146910840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1d41645a71bce458856482561c6190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1159620690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,6 +1664,7 @@ GameObject:
   - component: {fileID: 2090369962}
   - component: {fileID: 2090369961}
   - component: {fileID: 2090369960}
+  - component: {fileID: 2090369964}
   m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
@@ -1645,3 +1750,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2090369964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090369959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c97f38392a5ee42abb8834e7653c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
