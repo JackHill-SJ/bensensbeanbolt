@@ -5,8 +5,9 @@ using UnityEngine;
 public class CarMove : MonoBehaviour
 {
     public float Speed;
+    public bool Go = false;
     void Update()
     {
-        transform.position += Vector3.back * Time.deltaTime * Speed;
+        if (Go) transform.position += Vector3.back * Time.deltaTime * Speed;
     }
 }

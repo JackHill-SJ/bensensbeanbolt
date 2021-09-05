@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
     void Lose()
     {
         HasLost = true;
-        a.speed = 0;
+        if (a != null) a.speed = 0;
         rB.constraints = RigidbodyConstraints.None;
         rB.AddForce(new Vector3(GetPositiveNegative * GetRange, GetRange, GetPositiveNegative * GetRange));
         GameManager.Instance.RunEnd();
