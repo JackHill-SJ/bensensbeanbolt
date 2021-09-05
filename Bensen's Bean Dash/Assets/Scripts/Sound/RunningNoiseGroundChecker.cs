@@ -14,16 +14,19 @@ public class RunningNoiseGroundChecker : MonoBehaviour
     }
     void Update()
     {
-        if (!toggled && !Player.Instance.OnGround)
+        if (!Player.Instance.HasLost)
         {
-            toggled = true;
-            lastVolume = aS.volume;
-            aS.volume = 0;
-        }
-        else if (toggled && Player.Instance.OnGround)
-        {
-            toggled = false;
-            aS.volume = lastVolume;
+            if (!toggled && !Player.Instance.OnGround)
+            {
+                toggled = true;
+                lastVolume = aS.volume;
+                aS.volume = 0;
+            }
+            else if (toggled && Player.Instance.OnGround)
+            {
+                toggled = false;
+                aS.volume = lastVolume;
+            }
         }
     }
 }

@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     public bool OnGround { get; private set; }
     bool sliding;
     [SerializeField] bool lose;
-    bool hasLost = false;
+    public bool HasLost { get; private set; }
 
     private void Awake() => Instance = Instance ?? this;
     private void OnDestroy() => Instance = Instance == this ? null : Instance;
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
         {
             OnGround = true;
         }
-        if (collision.gameObject.layer == OBSTACLE_LAYER && !hasLost)
+        if (collision.gameObject.layer == OBSTACLE_LAYER && !HasLost)
         {
             Lose();
         }
@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
     int GetRange => Random.Range(1500, 3000);
     void Lose()
     {
-        hasLost = true;
+        HasLost = true;
         a.speed = 0;
         rB.constraints = RigidbodyConstraints.None;
         rB.AddForce(new Vector3(GetPositiveNegative * GetRange, GetRange, GetPositiveNegative * GetRange));
