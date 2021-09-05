@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7034733175131905297}
   - component: {fileID: 7034733175131905296}
   - component: {fileID: 6545406660868754972}
+  - component: {fileID: 6104503191444038359}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -106,7 +107,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -4816,5 +4817,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db2dfdab7a8b73243b430985a1245b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6104503191444038359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7034733175131905299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42cb78b88fc3701488cd3d704b062649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
