@@ -98,7 +98,7 @@ public class Player : MonoBehaviour
     void Swap()
     {
         DOTween.Kill(transform.position.x);
-        DOTween.To(() => transform.position.x, (x) => transform.position = new Vector3(x, transform.position.y, transform.position.z), targetLane * 2, .25f);
+        DOTween.To(() => transform.position.x, (x) => transform.position = new Vector3(x, transform.position.y, transform.position.z), targetLane * 4.5f, .25f);
     }
     void Jump()
     {
