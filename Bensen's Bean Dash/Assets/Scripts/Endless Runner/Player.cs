@@ -78,6 +78,7 @@ public class Player : MonoBehaviour
         if (a != null) a.speed = 0;
         rB.constraints = RigidbodyConstraints.None;
         rB.AddForce(new Vector3(GetPositiveNegative * GetRange, GetRange, GetPositiveNegative * GetRange));
+        rB.AddTorque(new Vector3(GetPositiveNegative * GetRange, GetPositiveNegative * GetRange, GetPositiveNegative * GetRange));
         GameManager.Instance.RunEnd();
     }
 
