@@ -12,6 +12,17 @@ public class BuildingSpawner : MonoBehaviour
     public int tileLength = 10;
     public int tileCount = 10;
 
+    private void Awake()
+    {
+        GameManager.OnGameFinished -= OnPlayerLose;
+        GameManager.OnGameFinished += OnPlayerLose;
+    }
+    private void OnDestroy()
+    {
+        GameManager.OnGameFinished -= OnPlayerLose;
+        leftChildren = null;
+        rightChildren = null;
+    }
     private void Start()
     {
         int position = 0;
@@ -21,11 +32,6 @@ public class BuildingSpawner : MonoBehaviour
             CreateTile(position, leftChildren, Side.Left);
             CreateTile(position, rightChildren, Side.Right);
         }
-    }
-    private void OnDestroy()
-    {
-        leftChildren = null;
-        rightChildren = null;
     }
     private void Update()
     {
@@ -52,5 +58,9 @@ public class BuildingSpawner : MonoBehaviour
         temp.transform.position = Vector3.forward * position;
         temp.transform.position = (side == Side.Left ? Vector3.left : Vector3.right) * 15;
         list.Add(temp);
+    }
+    void OnPlayerLose()
+    {
+        Destroy(this);
     }
 }

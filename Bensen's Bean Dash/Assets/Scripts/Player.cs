@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     int targetLane;
     bool onGround;
     bool sliding;
+    [SerializeField] bool lose;
+    bool hasLost = false;
 
     private void Awake() => Instance = Instance ?? this;
     private void OnDestroy() => Instance = Instance == this ? null : Instance;
@@ -42,9 +44,9 @@ public class Player : MonoBehaviour
         {
             onGround = true;
         }
-        if (collision.gameObject.layer == OBSTACLE_LAYER)
+        if (collision.gameObject.layer == OBSTACLE_LAYER && !hasLost)
         {
-            GameManager.Instance.RunEnd();
+            Lose();
         }
     }
     private void OnCollisionExit(Collision collision)
@@ -61,7 +63,25 @@ public class Player : MonoBehaviour
         Jump();
         Slide();
         HandleGravity();
+        if (lose)
+        {
+            lose = false;
+            Lose();
+        }
     }
+
+    int GetPositiveNegative => Random.Range(1, 3) * 2 - 3;
+    int GetRange => Random.Range(1500, 3000);
+    void Lose()
+    {
+        hasLost = true;
+        a.speed = 0;
+        rB.constraints = RigidbodyConstraints.None;
+        rB.AddForce(new Vector3(GetPositiveNegative * GetRange, GetRange, GetPositiveNegative * GetRange));
+        GameManager.Instance.RunEnd();
+    }
+
+    #region Player Movement
     void LaneSwap()
     {
         if (Input.GetKeyDown(LEFT) && targetLane > -Mathf.RoundToInt((LANE_COUNT - 1) * .5f))
@@ -93,7 +113,6 @@ public class Player : MonoBehaviour
             rB.AddForce(Vector3.up * JumpForce);
         }
     }
-    #region Slide
     void Slide()
     {
         if (Input.GetKeyDown(DOWN) && !sliding)

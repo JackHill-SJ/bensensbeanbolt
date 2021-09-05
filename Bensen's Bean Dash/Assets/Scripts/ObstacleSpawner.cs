@@ -11,6 +11,16 @@ public class ObstacleSpawner : MonoBehaviour
     public int tileLength = 10;
     public int tileCount = 10;
 
+    private void Awake()
+    {
+        GameManager.OnGameFinished -= OnPlayerLose;
+        GameManager.OnGameFinished += OnPlayerLose;
+    }
+    private void OnDestroy()
+    {
+        GameManager.OnGameFinished -= OnPlayerLose;
+        children = null;
+    }
     private void Start()
     {
         int position = 0;
@@ -19,10 +29,6 @@ public class ObstacleSpawner : MonoBehaviour
             position += tileLength;
             CreateTile(position, TileType.Empty);
         }
-    }
-    private void OnDestroy()
-    {
-        children = null;
     }
     private void Update()
     {
@@ -45,5 +51,9 @@ public class ObstacleSpawner : MonoBehaviour
         temp.transform.parent = transform;
         temp.transform.position = Vector3.forward * position;
         children.Add(temp);
+    }
+    void OnPlayerLose()
+    {
+        Destroy(this);
     }
 }
