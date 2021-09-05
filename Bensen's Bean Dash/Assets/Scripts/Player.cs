@@ -30,7 +30,11 @@ public class Player : MonoBehaviour
     {
         rB = GetComponent<Rigidbody>();
         c = GetComponent<CapsuleCollider>();
-        a = transform.GetChild(0).GetComponent<Animator>();
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (i == GameManager.Instance.Skin) a = transform.GetChild(i).GetComponent<Animator>();
+            else transform.GetChild(i).gameObject.SetActive(false);
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {

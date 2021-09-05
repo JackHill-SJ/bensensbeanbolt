@@ -10,6 +10,15 @@ public class Thunder : MonoBehaviour
     AudioSource aS;
     int index;
 
+    private void Awake()
+    {
+        GameManager.OnVolumeUpdate -= OnSoundChanged;
+        GameManager.OnVolumeUpdate += OnSoundChanged;
+    }
+    private void OnDestroy()
+    {
+        GameManager.OnVolumeUpdate -= OnSoundChanged;
+    }
     void Start()
     {
         a = GetComponent<Animator>();
@@ -32,7 +41,10 @@ public class Thunder : MonoBehaviour
         aS.PlayOneShot(info[index].Clip);
         Choose();
     }
-
+    void OnSoundChanged()
+    {
+        aS.volume = GameManager.Instance.Volume;
+    }
     [System.Serializable] public struct Info
     {
         public AudioClip Clip;

@@ -7,9 +7,14 @@ public class ButtonPresses : MonoBehaviour
 {
     public RectTransform MainMenu;
     public RectTransform CreditsMenu;
+    public RectTransform SkinsMenu;
+    public RectTransform SettingsMenu;
     private void Start()
     {
         CreditsMenu.gameObject.SetActive(false);
+        SkinsMenu.gameObject.SetActive(false);
+        SkinsMenu.gameObject.SetActive(false);
+        SettingsMenu.gameObject.SetActive(false);
     }
     public void Play()
     {
@@ -20,10 +25,22 @@ public class ButtonPresses : MonoBehaviour
         CreditsMenu.gameObject.SetActive(true);
         MainMenu.gameObject.SetActive(false);
     }
+    public void Skins()
+    {
+        SkinsMenu.gameObject.SetActive(true);
+        MainMenu.gameObject.SetActive(false);
+    }
+    public void Settings()
+    {
+        SettingsMenu.gameObject.SetActive(true);
+        MainMenu.gameObject.SetActive(false);
+    }
     public void Back()
     {
         MainMenu.gameObject.SetActive(true);
         CreditsMenu.gameObject.SetActive(false);
+        SkinsMenu.gameObject.SetActive(false);
+        SettingsMenu.gameObject.SetActive(false);
     }
     public void Quit()
     {
