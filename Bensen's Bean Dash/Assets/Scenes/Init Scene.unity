@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 140241714}
   - component: {fileID: 140241716}
   - component: {fileID: 140241715}
+  - component: {fileID: 140241717}
   m_Layer: 0
   m_Name: Background Music
   m_TagString: Untagged
@@ -360,6 +361,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &140241717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140241712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bd9c3c3e18bac84cb1f2d7c8e7ae3d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &459441030
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +650,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7c76b64173bbe4aa3f9ecf0040290f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Skin: 0
+  SkinSprites:
+  - {fileID: 21300000, guid: 7665a8e7c43870f44855c277d77ee684, type: 3}
+  - {fileID: 21300000, guid: 0362a2dcb62c20c41902c4076a6e723c, type: 3}
+  - {fileID: 21300000, guid: 92130ea3db1f80e48b0fc7155b7a7ea0, type: 3}
+  - {fileID: 21300000, guid: ba1bc7c8f188fd54a994f82e8ef3f2f8, type: 3}
+  - {fileID: 21300000, guid: ad5f5f8fe2ed4d44296d66a9479bccab, type: 3}
+  Volume: 0
   SpeedIncreasePercentagePerSecond: 0.03
 --- !u!114 &1686031904
 MonoBehaviour:
