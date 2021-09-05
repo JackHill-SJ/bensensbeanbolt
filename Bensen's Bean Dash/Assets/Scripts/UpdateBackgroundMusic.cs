@@ -22,7 +22,9 @@ public class UpdateBackgroundMusic : MonoBehaviour
         for (int i = 0; i < aSs.Length; i++)
         {
             baseVolume[i] = aSs[i].volume;
+            aSs[i].volume = 0;
         }
+        Invoke(nameof(OnVolumeUpdated), .01f);
     }
     void OnVolumeUpdated()
     {

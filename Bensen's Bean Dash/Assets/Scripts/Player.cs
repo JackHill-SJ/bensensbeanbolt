@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     CapsuleCollider c;
     Animator a;
     int targetLane;
-    bool onGround;
+    public bool OnGround { get; private set; }
     bool sliding;
     [SerializeField] bool lose;
     bool hasLost = false;
@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.layer == GROUND_LAYER)
         {
-            onGround = true;
+            OnGround = true;
         }
         if (collision.gameObject.layer == OBSTACLE_LAYER && !hasLost)
         {
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.layer == GROUND_LAYER)
         {
-            onGround = false;
+            OnGround = false;
         }
     }
 
@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
     }
     void Jump()
     {
-        if (Input.GetKeyDown(UP) && onGround)
+        if (Input.GetKeyDown(UP) && OnGround)
         {
             DOTween.Kill(c.height);
             DOTween.Kill(c.center.y);
@@ -137,7 +137,7 @@ public class Player : MonoBehaviour
     void SlideDone() => sliding = false;
     void HandleGravity()
     {
-        if (sliding && !onGround)
+        if (sliding && !OnGround)
         {
             rB.AddForce(Vector3.down * 100);
         }
