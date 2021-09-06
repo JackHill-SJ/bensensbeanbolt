@@ -34,7 +34,7 @@ public class ObstacleSpawner : MonoBehaviour
     {
         foreach (GameObject gO in children) gO.transform.position += Vector3.back * Time.deltaTime * Speed;
 
-        while (children[0].transform.position.z < -(tileLength * 1.5f))
+        while (children[0].transform.position.z < -(tileLength))
         {
             CarMove[] temp = children[2].GetComponentsInChildren<CarMove>();
             foreach (CarMove cM in temp)
