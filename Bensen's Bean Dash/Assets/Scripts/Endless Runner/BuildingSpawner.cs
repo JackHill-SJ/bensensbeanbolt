@@ -53,7 +53,7 @@ public class BuildingSpawner : MonoBehaviour
     }
     void CreateTile(float position, List<GameObject> list, Side side)
     {
-        GameObject temp = new GameObject();
+        GameObject temp = Instantiate(Tiles[Random.Range(0, Tiles.Length)]);
         temp.transform.parent = transform;
         temp.transform.position = Vector3.forward * position;
         temp.transform.position = (side == Side.Left ? Vector3.left : Vector3.right) * 15;
