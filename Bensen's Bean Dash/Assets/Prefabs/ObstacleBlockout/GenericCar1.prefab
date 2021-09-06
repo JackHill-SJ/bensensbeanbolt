@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 7166446112114411310}
   - component: {fileID: 8446093034439992666}
   - component: {fileID: 6682632612217465792}
+  - component: {fileID: 3182138235483621879}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -126,6 +127,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3182138235483621879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006496068780888863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c97f38392a5ee42abb8834e7653c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3715338434379063374
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +198,7 @@ GameObject:
   - component: {fileID: 915918068910678417}
   - component: {fileID: 8451197326580848399}
   - component: {fileID: 22134108772191184}
+  - component: {fileID: 6075294390898641061}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -258,6 +272,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6075294390898641061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3801744809216585595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c97f38392a5ee42abb8834e7653c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5289949024936557612
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +295,7 @@ GameObject:
   - component: {fileID: 7119390819129511886}
   - component: {fileID: 453002117264002318}
   - component: {fileID: 6732602232819873189}
+  - component: {fileID: 436503409676905412}
   m_Layer: 0
   m_Name: Cylinder.001
   m_TagString: Untagged
@@ -340,3 +367,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &436503409676905412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5289949024936557612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c97f38392a5ee42abb8834e7653c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

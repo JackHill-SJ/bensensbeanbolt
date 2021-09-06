@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 5111050448573260492}
   - component: {fileID: 6992663073909609990}
   - component: {fileID: 4661649205316490258}
+  - component: {fileID: 3806730419997620893}
   m_Layer: 7
   m_Name: MafiaTruck_Cleaned
   m_TagString: Untagged
@@ -145,3 +146,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.077884614, y: 0.015427931, z: 0.02113145}
   m_Center: {x: 0.0014180755, y: 0.0077302973, z: -0.000045472556}
+--- !u!114 &3806730419997620893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8793861513647503315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c97f38392a5ee42abb8834e7653c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
