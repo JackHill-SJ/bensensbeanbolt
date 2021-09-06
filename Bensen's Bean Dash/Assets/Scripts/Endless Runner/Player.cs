@@ -109,6 +109,7 @@ public class Player : MonoBehaviour
             DOTween.Kill(c.center.y);
             CancelInvoke(nameof(SlideUp));
             c.height = 2;
+            c.center = Vector3.up;
             sliding = false;
             a?.SetBool(ANIM_BOOL, false);
             rB.AddForce(Vector3.up * JumpForce);
