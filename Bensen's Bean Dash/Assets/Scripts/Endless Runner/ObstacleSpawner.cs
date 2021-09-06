@@ -50,7 +50,9 @@ public class ObstacleSpawner : MonoBehaviour
     }
     void CreateTile(float position, TileType type)
     {
-        GameObject temp = Instantiate(Tiles[Random.Range(0, Tiles.Length)]);
+        GameObject temp = null;
+        if (type == TileType.Empty) temp = new GameObject();
+        else if (type == TileType.Random) temp = Instantiate(Tiles[Random.Range(0, Tiles.Length)]);
         temp.transform.parent = transform;
         temp.transform.position = Vector3.forward * position;
         children.Add(temp);
