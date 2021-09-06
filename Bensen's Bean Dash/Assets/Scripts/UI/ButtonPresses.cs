@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Canvas))]
 public class ButtonPresses : MonoBehaviour
@@ -9,8 +10,10 @@ public class ButtonPresses : MonoBehaviour
     public RectTransform CreditsMenu;
     public RectTransform SkinsMenu;
     public RectTransform SettingsMenu;
+    public Image PsychedelicButton;
     private void Start()
     {
+        PsychedelicButton.color = GameManager.Instance.PsychedelicMode ? Color.green : Color.red;
         CreditsMenu.gameObject.SetActive(false);
         SkinsMenu.gameObject.SetActive(false);
         SkinsMenu.gameObject.SetActive(false);
@@ -41,6 +44,11 @@ public class ButtonPresses : MonoBehaviour
         CreditsMenu.gameObject.SetActive(false);
         SkinsMenu.gameObject.SetActive(false);
         SettingsMenu.gameObject.SetActive(false);
+    }
+    public void PsychedelicToggle()
+    {
+        GameManager.Instance.PsychedelicMode = !GameManager.Instance.PsychedelicMode;
+        PsychedelicButton.color = GameManager.Instance.PsychedelicMode ? Color.green : Color.red;
     }
     public void Quit()
     {
