@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 437294956510223705}
   - component: {fileID: 437294956510223704}
   - component: {fileID: 437294956510223719}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ObstTile3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

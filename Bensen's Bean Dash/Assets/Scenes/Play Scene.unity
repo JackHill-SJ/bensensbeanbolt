@@ -856,7 +856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &983008952
 Transform:
   m_ObjectHideFlags: 0
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   - {fileID: 5164977207291581753, guid: 7c7f31e4ba288b648b398d6fa99c2c91, type: 3}
   - {fileID: 2650381629802290014, guid: aac97756149be5740b02f46abfd0a249, type: 3}
   - {fileID: 3182061944453020342, guid: 67706ff25551b1040bcd26abfa49d4a4, type: 3}
-  tileLength: 10
+  tileLength: 100
   tileCount: 10
 --- !u!1 &1292237109
 GameObject:
@@ -1756,7 +1756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b64ea31af9a9d94d92700eba64e7d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpForce: 900
+  JumpForce: 1000
   lose: 0
 --- !u!4 &1751979478
 Transform:
@@ -2023,7 +2023,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090369959}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.01, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 1159620691}
