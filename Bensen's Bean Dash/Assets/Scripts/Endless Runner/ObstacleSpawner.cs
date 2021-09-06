@@ -27,7 +27,7 @@ public class ObstacleSpawner : MonoBehaviour
         for (int i = tileCount; i > 0; i--)
         {
             position += tileLength;
-            CreateTile(position, TileType.Empty);
+            CreateTile(position, i == tileCount ? TileType.Empty : TileType.Random);
         }
     }
     private void Update()
