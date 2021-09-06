@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [Range(0, 10)] public int Skin;
     public Sprite[] SkinSprites;
     [HideInInspector] [Range(0, 1)] public float Volume;
+    public bool PsychedelicMode;
 
     public float SpeedIncreasePercentagePerSecond;
 

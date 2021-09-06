@@ -653,11 +653,12 @@ MonoBehaviour:
   Skin: 0
   SkinSprites:
   - {fileID: 21300000, guid: 7665a8e7c43870f44855c277d77ee684, type: 3}
-  - {fileID: 21300000, guid: 0362a2dcb62c20c41902c4076a6e723c, type: 3}
   - {fileID: 21300000, guid: 92130ea3db1f80e48b0fc7155b7a7ea0, type: 3}
+  - {fileID: 21300000, guid: 0362a2dcb62c20c41902c4076a6e723c, type: 3}
   - {fileID: 21300000, guid: ba1bc7c8f188fd54a994f82e8ef3f2f8, type: 3}
   - {fileID: 21300000, guid: ad5f5f8fe2ed4d44296d66a9479bccab, type: 3}
   Volume: 0
+  PsychedelicMode: 0
   SpeedIncreasePercentagePerSecond: 0.03
 --- !u!114 &1686031904
 MonoBehaviour:
