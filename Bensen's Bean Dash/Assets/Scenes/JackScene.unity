@@ -813,7 +813,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  Tiles: []
+  Tiles:
+  - {fileID: 5329648400880283221, guid: 384ef81b4c46cf54eb2caffecd28dd3a, type: 3}
+  - {fileID: 1446846598791940356, guid: d42b83221e85dc948a2594589f46f581, type: 3}
+  - {fileID: 437294956510223718, guid: e9367aadb9f05b640a2d2518681399b1, type: 3}
+  - {fileID: 5913773337860525932, guid: bb90cb59889f2524cb8ebf99e57e17f4, type: 3}
+  - {fileID: 4428891397525177330, guid: 36f11f64b9e97584097e803ab146ebf0, type: 3}
+  - {fileID: 3786635874768447278, guid: 218343286400f0541967e1661e390c03, type: 3}
+  - {fileID: 5733754013628091082, guid: 9843ee4afcfc1a444acd4a198e9af714, type: 3}
+  - {fileID: 5164977207291581753, guid: 7c7f31e4ba288b648b398d6fa99c2c91, type: 3}
+  - {fileID: 2650381629802290014, guid: aac97756149be5740b02f46abfd0a249, type: 3}
+  - {fileID: 3182061944453020342, guid: 67706ff25551b1040bcd26abfa49d4a4, type: 3}
   tileLength: 10
   tileCount: 10
 --- !u!1 &1151225633
