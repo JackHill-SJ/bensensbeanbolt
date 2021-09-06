@@ -27,7 +27,7 @@ public class ObstacleSpawner : MonoBehaviour
         for (int i = tileCount; i > 0; i--)
         {
             position += tileLength;
-            CreateTile(position, TileType.Empty);
+            CreateTile(position, i == tileCount ? TileType.Empty : TileType.Random);
         }
     }
     private void Update()
@@ -37,7 +37,11 @@ public class ObstacleSpawner : MonoBehaviour
         while (children[0].transform.position.z < -(tileLength * 1.5f))
         {
             CarMove[] temp = children[2].GetComponentsInChildren<CarMove>();
-            foreach (CarMove cM in temp) cM.Go = true;
+            foreach (CarMove cM in temp)
+            {
+                Debug.Log($"{cM.gameObject.name} move");
+                cM.Go = true;
+            }
 
             float position = children[0].transform.position.z;
             Destroy(children[0]);
