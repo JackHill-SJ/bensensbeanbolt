@@ -59,14 +59,13 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        LaneSwap();
-        Jump();
-        Slide();
-        HandleGravity();
-        if (lose)
+        if (!HasLost)
         {
-            lose = false;
-            Lose();
+            LaneSwap();
+            Jump();
+            Slide();
+            HandleGravity();
+            if (lose) Lose();
         }
     }
 
